@@ -1,0 +1,5 @@
+#Tomcat publish data
+#Sat Jun 27 20:53:22 CEST 2015
+org.eclipse.jst.j2ee.server\:botta-persistence=WEB-INF/lib/botta-persistence-0.0.1-RC0-SNAPSHOT.jar
+org.eclipse.jst.j2ee.server\:botta-service=WEB-INF/lib/botta-service-0.0.1-RC0-SNAPSHOT.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\development\\apache-maven-3.3.3\\repo\\org\\springframework\\spring-web\\4.1.6.RELEASE\\spring-web-4.1.6.RELEASE.jar=WEB-INF/lib/spring-web-4.1.6.RELEASE.jar

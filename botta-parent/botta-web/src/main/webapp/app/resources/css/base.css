@@ -1,0 +1,33 @@
+.wrapper , .mainContent , .sideBar  { 
+	//change the box model for simplicity
+	-webkit-box-sizing : border-box ; 
+	-moz-box-sizing : border-box ; 
+	box-sizing :border-box ; 
+} 
+.wrapper{ 
+	padding :  1.5em; 
+    width: 100%;
+}
+.mainContent, .sideBarRight {
+	display:inline-block;
+	vertical-align:top;
+}
+.mainContent{
+	width: 60%;
+}
+.sidebarRight{
+	width: 30%;
+}
+.headerLeft, .headerCenter, .headerRight{
+	display:inline-block;
+	vertical-align:top;
+}
+.headerLeft{
+	width: 20%;
+}
+.headerCenter{
+	width: 50%;
+}
+.headerRight{
+	width: 25%;
+}

@@ -1,0 +1,2 @@
+Insert into BOTTA.T_CUSTOMER (ID,OPTLOCK,BIRTHDATE,FIRSTNAME,GENDER,NAME,NATIONALITY,TITEL,TYPE) values (1,to_date('16.06.15','DD.MM.RR'),to_date('31.03.76','DD.MM.RR'),'Bali','M','Botta','CH','Herr','Activ');
+commit;

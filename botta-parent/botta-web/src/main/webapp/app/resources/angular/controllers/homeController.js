@@ -1,0 +1,1 @@
+angular.module('bottaAppModule').controller('navigation', function() {});

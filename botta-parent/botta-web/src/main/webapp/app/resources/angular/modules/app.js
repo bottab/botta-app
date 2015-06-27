@@ -1,0 +1,1 @@
+angular.module('bottaAppModule', ['ngRoute','ngResource']);

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="technical-file-appender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="${webpubli.logs.dir}/webpubli_tech.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} %-5p [%t] [%c:%L]: %X{correlationId} %m%n"/>
+        </layout>
+    </appender>   
+     
+     <appender name="sl4j-file-appender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="${webpubli.logs.dir}/webpubli_web.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} %-5p [%t] [%c:%L]: %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="business-file-appender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="${webpubli.logs.dir}/webpubli_bussiness.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} %-5p [%t] [%c:%L]: %X{correlationId} %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- used for console output only -->
+    <appender name="technical-console-appender" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="TECH : %d{ISO8601} %-5p [%t] [%c]: %X{correlationId} %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- used for console output only -->
+    <appender name="business-console-appender" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.err"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="FACH : %d{ISO8601} %-5p [%t] [%c]: %X{correlationId} %m%n"/>
+        </layout>
+    </appender>
+
+    <logger name="org">
+        <level value="ERROR"/>
+    </logger>
+
+    <logger name="com">
+        <level value="ERROR"/>
+    </logger>
+    
+    <logger name="technical:ch.admin.bit.webpubli" additivity="false">
+        <level value="debug"/>
+        <appender-ref ref="technical-file-appender"/>
+
+        <!-- used for console output only -->
+        <appender-ref ref="technical-console-appender"/>
+    </logger>
+
+    <logger name="business:ch.admin.bit.webpubli" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="business-file-appender"/>
+
+        <!-- used for console output only -->
+        <appender-ref ref="business-console-appender"/>
+    </logger>
+    
+<!-- start of setting for solrj -->
+     <logger name="org.apache.commons.httpclient" additivity="false">
+        <level value="ERROR"/>
+        <!-- used for console output only -->
+        <appender-ref ref="technical-console-appender"/>
+    </logger>
+     <logger name="httpclient.wire.content" additivity="false">
+        <level value="ERROR"/>
+        <!-- used for console output only -->
+        <appender-ref ref="technical-console-appender"/>
+    </logger>
+    <logger name="httpclient.wire.header" additivity="false">
+        <level value="ERROR"/>
+        <!-- used for console output only -->
+        <appender-ref ref="technical-console-appender"/>
+    </logger>
+<!-- end of setting for solrj -->
+    
+    
+     <logger name="ch.admin.bit">
+        <level value="debug"/>
+    </logger>
+    
+    <root>
+        <level value="debug"/>
+        <appender-ref ref="technical-file-appender"/>
+         <appender-ref ref="sl4j-file-appender"/>
+        <!-- used for console output only -->
+        <!-- <appender-ref ref="technical-console-appender"/> -->
+    </root>
+
+</log4j:configuration>

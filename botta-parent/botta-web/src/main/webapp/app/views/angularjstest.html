@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="testApp">
+
+<head/>
+
+<body>
+<!-- 
+/app
+	/controllers
+	/directives
+	/services
+	/partials
+	/views
+
+ -->
+<div>
+	<!-- View Placeholder, loads all views defined in the route provider -->
+	<ng-view></ng-view>
+</div>
+<script type="text/javascript" src="../scripts/angular.min.js"></script>
+<script type="text/javascript" src="../scripts/angular-route.min.js"></script>
+<script type="text/javascript">
+	<!-- Injection scope -->
+	var testApp = angular.module('testApp', ['ngRoute']);
+	
+	testApp.config(function ($routeProvider){
+		$routeProvider
+		.when('/',
+				{
+					controller: 'SimpleController',
+					templateUrl: 'partials/view1.html'
+				})
+				.otherwise({ redirectTo: '/'});
+	});
+	
+	testApp.factory('simpleFactory', function(){
+		var customers = [
+		                 {name: 'Balázs Botta', city: 'Zürich'},
+        				 {name: 'Nicole Hartmann', city: 'Watt'}
+		                 ];
+		var factory = {};
+		factory.getCustomers = function (){
+			return customers;
+		};
+		return factory;
+	});
+	
+	function SimpleController($scope, simpleFactory){
+		$scope.customers = [];
+		
+		init();
+		
+		function init(){
+			$scope.customers = simpleFactory.getCustomers();
+		}
+		
+		$scope.addCustomer = function() {
+			$scope.customers.push(
+					{ 
+						name: $scope.newCustomer.name, 
+					  	city: $scope.newCustomer.city 
+					});
+		};
+	};
+	testApp.controller('SimpleController', SimpleController);
+
+</script>
+
+</body>
+</html>

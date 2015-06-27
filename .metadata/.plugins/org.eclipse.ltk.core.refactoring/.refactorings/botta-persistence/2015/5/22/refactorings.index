@@ -1,0 +1,19 @@
+1432798142122	Delete element
+1432805829948	Delete element
+1432805873326	Move 'hibernate.hbm2ddl.properties' to 'ddl_generation_config'
+1432823783695	Move 'service-test-config.xml' to 'internal'
+1432823986373	Copy file
+1432826612244	Delete elements
+1432828048885	Delete element
+1432828066358	Delete element
+1432828074877	Delete element
+1432828339014	Rename package 'ch.botta.persistence.model.adress'
+1432883446974	Rename type 'Shipped'
+1432883471453	Rename type 'Checking'
+1432883487060	Rename type 'Shipping'
+1432883857983	Rename type 'Open'
+1432884107555	Rename type 'PaidState'
+1432885692098	Delete elements
+1432885741204	Encapsulate field 'state'
+1432886557541	Encapsulate field 'categoryName'
+1432887194435	Delete element

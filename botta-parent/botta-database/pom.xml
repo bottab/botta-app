@@ -1,0 +1,114 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>ch.botta</groupId>
+		<artifactId>botta-parent</artifactId>
+		<version>0.0.1-RC0-SNAPSHOT</version>
+	</parent>
+	<artifactId>botta-database</artifactId>
+	<name>Database </name>
+	<description>all Database stuff</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>botta-persistence</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+		</dependency>
+	</dependencies>
+
+	<profiles>
+
+		<!-- the db action profiles -->
+		<profile>
+			<id>generate_db</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>sql-maven-plugin</artifactId>
+						<version>1.4</version>
+
+						<!-- documentation at: http://mojo.codehaus.org/sql-maven-plugin/ -->
+
+						<dependencies>
+							<!-- specify the dependent jdbc driver here -->
+							<dependency>
+								<groupId>com.oracle</groupId>
+								<artifactId>ojdbc6</artifactId>
+								<version>${oracle.ojdbc.version}</version>
+							</dependency>
+						</dependencies>
+
+						<!-- common configuration shared by all executions -->
+						<configuration>
+							<driver>${database.driver}</driver>
+							<url>${database.url}</url>
+							<username>${database.admin.username}</username>
+							<password>${database.admin.password}</password>
+						</configuration>
+
+						<executions>
+							<!-- <execution> <id>clean_schema</id> <phase>test-compile</phase> 
+								<goals> <goal>execute</goal> </goals> <configuration> <srcFiles> <srcFile>target/sql/clean/cleanSchema.sql</srcFile> 
+								</srcFiles> <delimiter>/</delimiter> <delimiterType>row</delimiterType> <onError>abort</onError> 
+								</configuration> </execution> -->
+							<execution>
+								<id>clean_schema</id>
+								<phase>clean</phase>
+								<goals>
+									<goal>execute</goal>
+								</goals>
+								<configuration>
+									<srcFiles>
+										<srcFile>src/resources/sql/clean/cleanSchema.sql</srcFile>
+										<srcFile>src/resources/sql/clean/cleanSequence.sql</srcFile>
+									</srcFiles>
+									<delimiter>/</delimiter>
+									<delimiterType>row</delimiterType>
+									<onError>abort</onError>
+								</configuration>
+							</execution>
+							<execution>
+								<id>create_schema</id>
+								<phase>install</phase>
+								<goals>
+									<goal>execute</goal>
+								</goals>
+								<configuration>
+									<srcFiles>
+										<srcFile>src/resources/sql/create/createSchema.sql</srcFile>
+									</srcFiles>
+									<onError>abort</onError>
+								</configuration>
+							</execution>
+							<execution>
+								<id>run_insert_scripts</id>
+								<phase>install</phase>
+								<goals>
+									<goal>execute</goal>
+								</goals>
+								<configuration>
+									<srcFiles>
+										<srcFile>src/resources/sql/insert/001_T_USER.sql</srcFile>
+										<srcFile>src/resources/sql/insert/002_T_CUSTOMER.sql</srcFile>
+										<srcFile>src/resources/sql/insert/003_T_ROLE.sql</srcFile>
+										<srcFile>src/resources/sql/insert/004_T_R_USER_ROLE.sql</srcFile>
+										<srcFile>src/resources/sql/insert/005_T_R_CUSTOMER_USER.sql</srcFile>
+									</srcFiles>
+									<onError>abort</onError>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+	</profiles>
+
+</project>

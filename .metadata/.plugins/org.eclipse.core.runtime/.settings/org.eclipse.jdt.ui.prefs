@@ -1,0 +1,21 @@
+content_assist_disabled_computers=org.eclipse.jdt.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaNoTypeProposalCategory\u0000org.eclipse.jdt.ui.textProposalCategory\u0000org.eclipse.jdt.ui.javaTypeProposalCategory\u0000
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="ch.botta.persistence.model.base.AbstractBaseEntity"><rhs name\="ch.botta.persistence.model.adress.Address"/><rhs name\="ch.botta.persistence.model.order.Order"/><rhs name\="ch.botta.persistence.model.person.BottaUser"/><rhs name\="ch.botta.persistence.model.state.State"/><rhs name\="ch.botta.persistence.model.product.ProductCategory"/></lhs><lhs name\="ch.botta.persistence.model.adress.Address"><rhs name\="ch.botta.persistence.model.adress.Address"/></lhs><lhs name\="ch.botta.persistence.model.person.BottaUser"><rhs name\="ch.botta.persistence.model.person.BottaUser"/></lhs><lhs name\="ch.botta.persistence.model.state.OrderState"><rhs name\="ch.botta.persistence.model.state.DeniedState"/><rhs name\="ch.botta.persistence.model.state.ShippedState"/><rhs name\="ch.botta.persistence.model.state.PayState"/></lhs><lhs name\="java.lang.Enum"><rhs name\="ch.botta.persistence.model.state.enums.Checked"/><rhs name\="ch.botta.persistence.model.state.enums.Denied"/><rhs name\="ch.botta.persistence.model.state.enums.Shipped"/><rhs name\="ch.botta.persistence.model.state.enums.Paid"/><rhs name\="org.springframework.http.HttpStatus"/><rhs name\="javax.persistence.CascadeType"/><rhs name\="javax.persistence.FetchType"/></lhs><lhs name\="ch.botta.persistence.model.product.ProductCategory"><rhs name\="ch.botta.persistence.model.product.ProductCategory"/></lhs><lhs name\="ch.botta.persistence.model.order.Order"><rhs name\="ch.botta.persistence.model.order.Order"/></lhs><lhs name\="java.util.Collection"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.lang.Iterable"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.List"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="ch.botta.persistence.model.state.State"><rhs name\="ch.botta.persistence.model.state.State"/></lhs><lhs name\="org.springframework.http.HttpEntity"><rhs name\="org.springframework.http.ResponseEntity"/></lhs><lhs name\="org.springframework.http.ResponseEntity"><rhs name\="org.springframework.http.ResponseEntity"/></lhs><lhs name\="java.lang.Exception"><rhs name\="ch.botta.persistence.exception.BottaApplicationException"/></lhs><lhs name\="java.lang.Throwable"><rhs name\="ch.botta.persistence.exception.BottaApplicationException"/></lhs><lhs name\="ch.botta.persistence.exception.BottaApplicationException"><rhs name\="ch.botta.persistence.exception.BottaApplicationException"/></lhs><lhs name\="ch.botta.service.dto.security.UserDetailData"><rhs name\="ch.botta.service.dto.security.UserDetailData"/></lhs></history>
+content_assist_number_of_computers=22
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+fontPropagated=true
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.ui.editor.tab.width=
+org.eclipse.jdt.ui.formatterprofiles.version=12
+org.eclipse.jdt.ui.javadoclocations.migrated=true
+org.eclipse.jdt.ui.text.code_templates_migrated=true
+org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.text.templates_migrated=true
+org.eclipse.jface.textfont=1|Courier New|10.0|0|WINDOWS|1|0|0|0|0|0|0|0|0|1|0|0|0|0|Courier New;
+proposalOrderMigrated=true
+spelling_locale_initialized=true
+tabWidthPropagated=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true
